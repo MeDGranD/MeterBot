@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: MeterBotAPL
+  datasource:
+    url: jdbc:postgresql://localhost:5432/MeterBotClients
+    username: med
+    password: 123456789
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql=true:
+
+telegramToken: YourBotToken
+botName: YourBotName
+creatorId: YourTelegramId
