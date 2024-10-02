@@ -1,5 +1,6 @@
 package ru.MeDGranD.MeterBotAPL.Application;
 
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.MeDGranD.MeterBotAPL.Application.Contacts.IncreaseUsersMetrics;
@@ -23,7 +24,7 @@ public class UserService {
         this._randomGenerator = new Random();
     }
 
-    public Optional<Integer> IncreaseMetrics(IncreaseUsersMetrics userInfo){
+    public Optional<Integer> IncreaseMetrics(@NotNull IncreaseUsersMetrics userInfo){
 
         int additionalMetrics = this._randomGenerator.nextInt(31) - 10;
 
@@ -86,7 +87,7 @@ public class UserService {
 
     }
 
-    public User CreateUser(User newUser){
+    public User CreateUser(@NotNull User newUser){
 
         if(this._userReposiroty.findByUserName(newUser.getUserName()) != null){
             return null;
@@ -98,7 +99,7 @@ public class UserService {
 
     }
 
-    public void DeleteUser(User UserToDelete){
+    public void DeleteUser(@NotNull User UserToDelete){
 
         if(this._userReposiroty.findByUserName(UserToDelete.getUserName()) == null){
             return;
@@ -108,7 +109,7 @@ public class UserService {
 
     }
 
-    public void UpdateUser(User UserToUpdate) {
+    public void UpdateUser(@NotNull User UserToUpdate) {
 
         if(this._userReposiroty.findByUserName(UserToUpdate.getUserName()) == null){
             return;
